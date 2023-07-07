@@ -1,0 +1,72 @@
+.flipswitch {
+    position: relative;
+    width: 40px;
+}
+
+.flipswitch input[type=checkbox] {
+    display: none;
+}
+
+.flipswitch_label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0px solid #999999;
+    border-radius: 15px;
+}
+
+.flipswitch_inner {
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.flipswitch_inner:before,
+.flipswitch_inner:after {
+    float: left;
+    width: 50%;
+    height: 20px;
+    padding: 0;
+    line-height: 20px;
+    font-size: 18px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.flipswitch_inner:before {
+    content: "";
+    padding-left: 12px;
+    background-color: #635FC7;
+    color: #FFFFFF;
+}
+
+.flipswitch_inner:after {
+    content: "";
+    padding-right: 12px;
+    background-color: #635FC7;
+    color: #256799;
+    text-align: right;
+}
+
+.flipswitch_switch {
+    width: 15px;
+    margin: 2.5px;
+    background: #FFFFFF;
+    border: 0px solid #999999;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 19px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.flipswitch_cb:checked+.flipswitch_label .flipswitch_inner {
+    margin-left: 0;
+}
+
+.flipswitch_cb:checked+.flipswitch_label .flipswitch_switch {
+    right: 0;
+}

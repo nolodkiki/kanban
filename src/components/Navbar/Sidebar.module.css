@@ -1,0 +1,15 @@
+.board_button svg {
+    @apply fill-gray-300 ease-in duration-200
+}
+
+.board_button:hover svg {
+    @apply fill-white ease-in duration-200
+}
+
+.board_button_create svg {
+    @apply fill-blue-300 ease-in duration-200
+}
+
+.board_button_create:hover svg {
+    @apply fill-blue-300-opacity ease-in duration-200
+}
