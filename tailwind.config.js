@@ -12,7 +12,7 @@ export default {
       'fs-100': '0.75rem', /* 12px bm */
       'fs-400': '1.125rem', /* 18px hl */
       'fs-800': '2.125rem', /* 18px hxl */
-      'custom': 'clamp(1.2rem, 3vw, 1.5rem)'
+      'fs-custom': 'clamp(1.2rem, 3vw, 1.5rem)'
     },
     fontWeight: {
       medium: 500,
@@ -69,13 +69,33 @@ export default {
         'spacing-sidebar': '2.4px'
       },
       width: {
+        'sidebar-width': '300px',
+        'card-width': '17.5rem'
+      },
+      minWidth: {
         'sidebar-width': '300px'
       },
+      height: {
+        'header-height': '6rem'
+      },
+      minHeight: {
+        'card-height': '5.5rem'
+      }
+      ,
       borderWidth: {
         '1': '1px'
+      },
+      variants: {
+        fill: ['hover'],
+      },
+      flex: {
+        1: 1
       }
     },
+
   },
+
+
   plugins: [],
 }
 
