@@ -7,9 +7,21 @@ import { ReactComponent as IconDarkTheme } from '../../assets/icon-dark-theme.sv
 import { ReactComponent as IconHideSidebar } from '../../assets/icon-hide-sidebar.svg'
 import BoardButton from "./BoardButton"
 import Switch from "../../util/Switch"
+import { useAppSelector } from "../../Redux/hooks";
 
 
-const Sidebar: FC = () => {
+interface ISidebarProps {
+}
+
+const Sidebar: FC<ISidebarProps> = () => {
+    const state = useAppSelector(state => state.data.data.boards)
+    console.log(state)
+
+    const renderBoards = state.map(({ id, name }) => {
+        return <BoardButton key={id} id={id} buttonText={name} />
+    })
+
+
     return (
         <div className="min-w-sidebar-width h-screen pb-10 bg-main-gray-400 border-r-1 border-r-gray-500 text-fs-100 text-gray-300 font-bold flex flex-col">
             <div className="pl-9 pt-9">
@@ -21,9 +33,7 @@ const Sidebar: FC = () => {
             </div>
             <div className="text-fs-400 pr-5 mt-5">
                 <div className="flex flex-col gap-1 items-start ">
-                    <BoardButton buttonText={'Platform Launch'} />
-                    <BoardButton buttonText={'Marketing Plan'} />
-                    <BoardButton buttonText={'Roadmap'} />
+                    {renderBoards}
                 </div>
                 <button className={`${s.board_button_create} flex items-center gap-3 py-3 pl-9 rounded-r-full text-blue-300 hover:text-blue-300-opacity ease-in duration-200 w-full`}>
                     <BoardIcon />

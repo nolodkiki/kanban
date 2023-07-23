@@ -11,10 +11,6 @@
     background-color: rgb(32, 33, 44);
     color: white;
   }
-
-  * {
-    box-sizing: border-box;
-  }
 }
 
 /* button:hover svg {
